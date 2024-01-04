@@ -38,8 +38,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 # Live example
 
-[!NOTE]
-You can see a live version here [https://free-currency.vercel.app/](https://free-currency.vercel.app/)
+> [!NOTE]
+> You can see a live version here [https://free-currency.vercel.app/](https://free-currency.vercel.app/)
 
-[!WARNING]
-Attention: This link is temporary, I cannot assure that it will always remain active.
+> [!WARNING]
+> Attention: This link is temporary, I cannot assure that it will always remain active.
