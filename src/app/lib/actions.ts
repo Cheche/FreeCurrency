@@ -7,9 +7,9 @@ const currencyFormSchema = z.object({
   currencyFrom: z.string().min(3),
   currencyTo: z.string().min(3),
   amount: z.number({
-    required_error: 'Debw ingresar la cantidad de dinero a convertir',
-    invalid_type_error: 'La cantidad debe ser un número'
-  }).positive('La cantidad debe ser mayor a 0 (cero)')
+    required_error: 'You must enter an amount of money to be converted',
+    invalid_type_error: 'Enter a number'
+  }).positive('The amount must be greater than 0 (zero).')
 })
 
 type State = {
