@@ -4,6 +4,7 @@ import Selector from './selector'
 import getExchange from '../lib/actions'
 import { useFormState } from 'react-dom'
 import Image from 'next/image'
+import { SubmitButton } from './submit-button'
 
 interface Props {
   currencies: any[]
@@ -81,12 +82,7 @@ const CurrenciesForm = ({ currencies } : Props) => {
           {state?.errors?.amount && <p className='text-red-400 mt-1'>{state?.errors?.amount}</p>}
         </div>
 
-        <button
-          type='submit'
-          className='mt-8 bg-blue-500 text-white py-2 px-4 w-full transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none h-12'
-        >
-          Submit
-        </button>
+        <SubmitButton label='Submit' />
 
         {state?.success && (
           <div className='mt-4 bg-green-100 p-4 w-full'>
