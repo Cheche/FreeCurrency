@@ -44,7 +44,7 @@ const CurrenciesForm = ({ currencies } : Props) => {
             width={24}
             height={24}
           />
-          Switch currencies
+          Swap currencies
         </button>
 
         <Selector
@@ -82,7 +82,7 @@ const CurrenciesForm = ({ currencies } : Props) => {
           {state?.errors?.amount && <p className='text-red-400 mt-1'>{state?.errors?.amount}</p>}
         </div>
 
-        <SubmitButton label='Submit' />
+        <SubmitButton label='Calculate!' />
 
         {state?.success && (
           <div className='mt-4 bg-green-100 p-4 w-full'>
