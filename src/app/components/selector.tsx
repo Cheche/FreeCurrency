@@ -27,7 +27,7 @@ const Selector = ({ label, inputId, placeholder, options, value, setValue, error
         name={inputId}
         onChange={handleSelectChange}
         value={value}
-        className='w-full bg-white rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out h-12'
+        className={`w-full bg-white rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out h-12 ${errorMessage ? 'border-red-400' : ''}`}
       >
 
         <option disabled value=''>{placeholder}</option>
@@ -42,7 +42,7 @@ const Selector = ({ label, inputId, placeholder, options, value, setValue, error
         ))}
       </select>
 
-      {errorMessage && <p>{errorMessage}</p>}
+      {errorMessage && <p className='text-red-400'>{errorMessage}</p>}
 
     </div>
   )

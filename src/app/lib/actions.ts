@@ -4,8 +4,12 @@ import { getRatesCurrencies } from './api'
 import { z } from 'zod'
 
 const currencyFormSchema = z.object({
-  currencyFrom: z.string().min(3),
-  currencyTo: z.string().min(3),
+  currencyFrom: z.string({
+    invalid_type_error: 'Enter a currency'
+  }).min(3),
+  currencyTo: z.string({
+    invalid_type_error: 'Enter a currency'
+  }).min(3),
   amount: z.number({
     required_error: 'You must enter an amount of money to be converted',
     invalid_type_error: 'Enter a number'

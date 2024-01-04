@@ -76,9 +76,9 @@ const CurrenciesForm = ({ currencies } : Props) => {
             min='0'
             id='amount'
             name='amount'
-            className='w-full rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out h-12'
+            className={`w-full rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out h-12 ${state?.errors?.amount ? 'border-red-400' : ''}`}
           />
-          {state?.errors?.amount && <p className='text-red-500 mt-1'>{state?.errors?.amount}</p>}
+          {state?.errors?.amount && <p className='text-red-400 mt-1'>{state?.errors?.amount}</p>}
         </div>
 
         <button
