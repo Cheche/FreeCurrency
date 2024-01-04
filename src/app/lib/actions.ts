@@ -22,7 +22,11 @@ type State = {
     currencyTo?: string[] | string;
     amount?: string[] | string;
   } | null;
-  success?: {from: string, to: string} | null
+  success?: {
+    from: string;
+    to: string;
+    rate: string
+  } | null
 };
 
 export default async function getExchange (prevState: State, formData: FormData) {
@@ -49,10 +53,11 @@ export default async function getExchange (prevState: State, formData: FormData)
   try {
     const rate = await getRatesCurrencies(currencyFrom, currencyTo)
 
-    const calc = Number(Object.values(rate.data).flat()[0]) * amount
+    const numberRate = Number(Object.values(rate.data).flat()[0])
+    const calc = numberRate * amount
 
     response.errors = null
-    response.success = { from: amount.toFixed(2), to: calc.toFixed(2) }
+    response.success = { from: amount.toFixed(2), to: calc.toFixed(2), rate: numberRate.toFixed(2) }
 
     return response
   } catch (e) {

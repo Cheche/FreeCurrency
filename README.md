@@ -34,3 +34,10 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+
+# Live example
+
+You can see a live version here [https://free-currency.vercel.app/](https://free-currency.vercel.app/)
+
+Attention: This link is temporary, I cannot assure that it will always remain active.

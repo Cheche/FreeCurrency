@@ -9,9 +9,10 @@ interface Props {
   value: any
   setValue: (value: any) => void;
   errorMessage?: string | string[] | undefined
+  disabledValue: any
 }
 
-const Selector = ({ label, inputId, placeholder, options, value, setValue, errorMessage }:Props) => {
+const Selector = ({ label, inputId, placeholder, options, value, setValue, errorMessage, disabledValue }:Props) => {
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedValue = event.target.value
     setValue(selectedValue)
@@ -36,6 +37,7 @@ const Selector = ({ label, inputId, placeholder, options, value, setValue, error
           <option
             key={index}
             value={opt.code}
+            disabled={opt.code === disabledValue}
           >
             {opt.code}: {opt.name}
           </option>

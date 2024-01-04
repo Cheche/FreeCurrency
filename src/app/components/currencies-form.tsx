@@ -55,6 +55,7 @@ const CurrenciesForm = ({ currencies } : Props) => {
           value={baseCurrency}
           setValue={setBaseCurrency}
           errorMessage={state?.errors?.currencyFrom}
+          disabledValue={targetCurrency}
         />
 
         <Selector
@@ -65,6 +66,7 @@ const CurrenciesForm = ({ currencies } : Props) => {
           value={targetCurrency}
           setValue={setTargetCurrency}
           errorMessage={state?.errors?.currencyTo}
+          disabledValue={baseCurrency}
         />
 
         <div className='w-full'>
@@ -82,12 +84,12 @@ const CurrenciesForm = ({ currencies } : Props) => {
           {state?.errors?.amount && <p className='text-red-400 mt-1'>{state?.errors?.amount}</p>}
         </div>
 
-        <SubmitButton label='Calculate!' />
+        <SubmitButton label='Convert!' />
 
         {state?.success && (
           <div className='mt-4 bg-green-100 p-4 w-full'>
             <span className='text-green-800 text-sm'>
-              {state?.success?.from} {baseCurrency} are equivalent to {state?.success?.to} {targetCurrency}
+              1 {baseCurrency} are equivalent to {state?.success?.rate} {targetCurrency}
             </span>
             <p className='text-3xl text-green-800'>
               {currencySymbol} {state?.success?.to}
