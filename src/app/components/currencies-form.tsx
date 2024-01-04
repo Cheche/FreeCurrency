@@ -12,14 +12,14 @@ interface Props {
 const CurrenciesForm = ({ currencies } : Props) => {
   const [baseCurrency, setBaseCurrency] = useState('')
   const [targetCurrency, setTargetCurrency] = useState('')
-  const [currencySymbol, setCurrencySymbol] = useState('')
+  const [currencyRate, setCurrencyRate] = useState({ symbol: '', message: '' })
 
   const initialState = { success: undefined, errors: {} }
   const [state, formAction] = useFormState(getExchange, initialState)
 
   useEffect(() => {
-    const symbol = currencies.find((currency) => currency.code === targetCurrency)
-    setCurrencySymbol(symbol?.symbol)
+    const currencySymbol = currencies.find((currency) => currency.code === targetCurrency)
+    setCurrencyRate({ symbol: currencySymbol?.symbol, message: `1 ${baseCurrency} are equivalent to ${state?.success?.rate} ${targetCurrency}` })
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state])
 
@@ -89,10 +89,10 @@ const CurrenciesForm = ({ currencies } : Props) => {
         {state?.success && (
           <div className='mt-4 bg-green-100 p-4 w-full'>
             <span className='text-green-800 text-sm'>
-              1 {baseCurrency} are equivalent to {state?.success?.rate} {targetCurrency}
+              {currencyRate.message}
             </span>
             <p className='text-3xl text-green-800'>
-              {currencySymbol} {state?.success?.to}
+              {currencyRate.symbol} {state?.success?.to}
             </p>
           </div>
         )}
