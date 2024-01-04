@@ -30,7 +30,7 @@ const CurrenciesForm = ({ currencies } : Props) => {
   }
 
   return (
-    <div className='max-w-md mx-auto rounded-lg overflow-hidden shadow-lg p-8 bg-white border'>
+    <div className='max-w-md w-full rounded-lg overflow-hidden shadow-lg p-8 bg-white border'>
       <form action={formAction} className='flex flex-col items-center'>
 
         <button
