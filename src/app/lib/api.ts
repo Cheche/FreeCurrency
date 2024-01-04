@@ -3,6 +3,7 @@
 interface ICurrencyData {
   [key: string]: {
     name: string;
+    symbol_native: string;
   };
 }
 
@@ -17,7 +18,7 @@ export const getCurrencies = async () => {
 
     const arrayCurrencies = []
     for (const [key, value] of Object.entries(currencies.data)) {
-      arrayCurrencies.push({ code: key, name: value.name })
+      arrayCurrencies.push({ code: key, name: value.name, symbol: value.symbol_native })
     }
     return arrayCurrencies
   } catch (e) {

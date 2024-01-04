@@ -48,7 +48,7 @@ export default async function getExchange (prevState: State, formData: FormData)
     const calc = Number(Object.values(rate.data).flat()[0]) * amount
 
     response.errors = null
-    response.success = calc
+    response.success = Number(calc.toFixed(2))
 
     return response
   } catch (e) {

@@ -18,7 +18,7 @@ const Selector = ({ label, inputId, placeholder, options, value, setValue, error
   }
 
   return (
-    <div className='relative mb-4'>
+    <div className='relative mb-4 w-full'>
 
       <label htmlFor={inputId} className='leading-7 text-sm text-gray-600'>{label}</label>
 
@@ -27,7 +27,7 @@ const Selector = ({ label, inputId, placeholder, options, value, setValue, error
         name={inputId}
         onChange={handleSelectChange}
         value={value}
-        className='w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
+        className='w-full bg-white rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out h-12'
       >
 
         <option disabled value=''>{placeholder}</option>
