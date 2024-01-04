@@ -89,9 +89,12 @@ const CurrenciesForm = ({ currencies } : Props) => {
         </button>
 
         {state?.success && (
-          <div className='mt-4 bg-green-100 p-4 '>
+          <div className='mt-4 bg-green-100 p-4 w-full'>
+            <span className='text-green-800 text-sm'>
+              {state?.success?.from} {baseCurrency} are equivalent to {state?.success?.to} {targetCurrency}
+            </span>
             <p className='text-3xl text-green-800'>
-              {currencySymbol} {state?.success}
+              {currencySymbol} {state?.success?.to}
             </p>
           </div>
         )}
